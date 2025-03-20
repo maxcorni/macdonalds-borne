@@ -1,7 +1,36 @@
-.title-langues{
-    h2 {
-        font-size: 20px;
+@use "../abstracts/index" as *;
+
+
+.choix-langues {
+    display: flex;
+    flex-direction: column;
+
+    .title-langues {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 8rem;
+        h2 {
+            font-size: 20px;
+            font-family: "speedee";
+        }
+    }
+    img {
+        width: 150px;
+        height: 80px;
+    }
+
+    .item {
+        margin-bottom: 1rem;
         font-family: "speedee";
+        font-size: 12px;
+    }
+    a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $ColorHeaderMacDo;
+        color: $ColorTexte;
     }
 }
-

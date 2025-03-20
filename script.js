@@ -25,6 +25,8 @@ fetch('../mcdo.json')
         console.error("Erreur lors du chargement du fichier JSON : ", error);
     });
 
+
+    
 // Afficher les produits d'une catégorie
 function afficherProduits(type, titre) {
     liste.innerHTML = "";

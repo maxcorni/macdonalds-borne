@@ -1,4 +1,5 @@
 @use "../abstracts/index" as *;
+
 main {
     background-color: antiquewhite;
 }
@@ -23,17 +24,7 @@ main {
         height: 60px;
     }
 }
-.choix-langues {
-    display: flex;
-    flex-direction: column;
 
-    .title-langues {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 8rem;
-    }
-}
 
 .filter{
     display: flex;
@@ -48,24 +39,7 @@ main {
     justify-content: space-between;
     flex-wrap: wrap;
 
-    img {
-        width: 150px;
-        height: 80px;
-    }
 
-    .item {
-        margin-bottom: 1rem;
-        font-family: "speedee";
-        font-size: 12px;
-    }
-    a {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: $ColorHeaderMacDo;
-        color: $ColorTexte;
-    }
 }
 body{
     width: 412px;
