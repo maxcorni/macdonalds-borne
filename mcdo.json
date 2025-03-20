@@ -1,0 +1,164 @@
+{
+  "burgers": [
+    {
+      "id": 1,
+      "name": "Big Mac™",
+      "description": "Deux steaks hachés, cheddar fondu, oignons, cornichons et la sauce inimitable, dans un pain avec graines de sésame.",
+      "price": 5.20,
+      "calories": 503,
+      "image": "images/big_mac.png"
+    },
+    {
+      "id": 2,
+      "name": "Cheeseburger",
+      "description": "Steak haché, fromage fondu, cornichons, oignons, ketchup et moutarde, dans un pain moelleux.",
+      "price": 2.50,
+      "calories": 301,
+      "image": "images/cheeseburger.png"
+    },
+    {
+      "id": 3,
+      "name": "McChicken™",
+      "description": "Filet de poulet pané, laitue croquante et sauce spéciale, dans un pain moelleux.",
+      "price": 5.00,
+      "calories": 445,
+      "image": "images/mcchicken.png"
+    },
+    {
+      "id": 4,
+      "name": "Royal Cheese™",
+      "description": "Steak haché, fromage fondu, moutarde, ketchup, oignons et cornichons, dans un pain moelleux.",
+      "price": 5.50,
+      "calories": 517,
+      "image": "images/royal_cheese.png"
+    },
+    {
+      "id": 5,
+      "name": "Filet-O-Fish™",
+      "description": "Filet de poisson pané, fromage fondu et sauce tartare, dans un pain moelleux.",
+      "price": 4.50,
+      "calories": 331,
+      "image": "images/filet_o_fish.png"
+    }
+  ],
+  "sides": [
+    {
+      "id": 10,
+      "name": "Frites Moyennes",
+      "description": "Portion de frites dorées et croustillantes.",
+      "price": 2.20,
+      "calories": 340,
+      "image": "images/frites_moyennes.png"
+    },
+    {
+      "id": 11,
+      "name": "Deluxe Potatoes™",
+      "description": "Quartiers de pommes de terre assaisonnés et dorés au four.",
+      "price": 2.50,
+      "calories": 298,
+      "image": "images/deluxe_potatoes.png"
+    },
+    {
+      "id": 12,
+      "name": "P'tite Salade",
+      "description": "Mélange de jeunes pousses et de légumes croquants.",
+      "price": 2.00,
+      "calories": 15,
+      "image": "images/ptite_salade.png"
+    }
+  ],
+  "drinks": [
+    {
+      "id": 20,
+      "name": "Coca-Cola®",
+      "description": "Boisson gazeuse rafraîchissante.",
+      "price": 2.00,
+      "calories": 140,
+      "image": "images/coca_cola.png"
+    },
+    {
+      "id": 21,
+      "name": "Eau By McDo™",
+      "description": "Bouteille d'eau minérale naturelle.",
+      "price": 1.50,
+      "calories": 0,
+      "image": "images/eau_by_mcdo.png"
+    },
+    {
+      "id": 22,
+      "name": "Minute Maid® Orange",
+      "description": "Jus d'orange 100% pur jus.",
+      "price": 2.20,
+      "calories": 120,
+      "image": "images/minute_maid_orange.png"
+    }
+  ],
+  "desserts": [
+    {
+      "id": 30,
+      "name": "Sundae Chocolat",
+      "description": "Glace onctueuse nappée de sauce chocolat.",
+      "price": 2.70,
+      "calories": 280,
+      "image": "images/sundae_chocolat.png"
+    },
+    {
+      "id": 31,
+      "name": "McFlurry™ Oreo®",
+      "description": "Glace mélangée à des morceaux de biscuits Oreo®.",
+      "price": 3.00,
+      "calories": 340,
+      "image": "images/mcflurry_oreo.png"
+    },
+    {
+      "id": 32,
+      "name": "Donut Chocolat",
+      "description": "Beignet moelleux nappé de chocolat.",
+      "price": 2.30,
+      "calories": 452,
+      "image": "images/donut_chocolat.png"
+    }
+  ],
+  "menus": [
+    {
+      "id": 100,
+      "name": "Menu Best Of™ Big Mac™",
+      "main": 1,
+      "sideOptions": [10, 11, 12],
+      "drinkOptions": [20, 21, 22],
+      "price": 8.50,
+      "image": "images/menu_best_of_big_mac.png"
+    },
+    {
+      "id": 101,
+      "name": "Menu Maxi Best Of™ McChicken™",
+      "main": 3,
+      "sideOptions": [10, 11, 12],
+      "drinkOptions": [20, 21, 22],
+      "price": 9.00,
+      "image": "images/menu_maxi_best_of_mcchicken.png"
+    }
+  ],
+  "happyMeal": [
+    {
+      "id": 200,
+      "name": "Happy Meal™ Cheeseburger",
+      "main": 2,
+      "sideOptions": [10, 12],
+      "drinkOptions": [21, 22],
+      "toyOptions": ["Jouet Pokémon", "Livre Disney"],
+      "price": 4.80,
+      "image": "images/happy_meal_cheeseburger.png"
+    },
+    {
+      "id": 201,
+      "name": "Happy Meal™ 4 Chicken McNuggets™",
+      "main": "4 Chicken McNuggets™",
+      "sideOptions": [10, 12],
+      "drinkOptions": [21, 22],
+      "toyOptions": ["Jouet Pokémon", "Livre Disney"],
+      "price": 4.80,
+      "image": "images/happy_meal_nuggets.png"
+    }
+  ]
+}
