@@ -1,0 +1,36 @@
+/* Conteneur de la modale */
+.modal {
+    display: none; /* Cachée par défaut */
+    position: fixed;
+    z-index: 999; /* Tout en haut */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond sombre */
+}
+
+/* Contenu de la modale */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto; /* Centré verticalement */
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+/* Image produit dans la modale */
+.img-produit {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+
+/* Empêcher le scroll de la page quand modale ouverte */
+body.modal-open {
+    overflow: hidden;
+}
