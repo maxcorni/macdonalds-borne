@@ -1,5 +1,16 @@
+@use "../abstracts/index" as *;
+
 nav{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+header {
+    background-color: $ColorHeaderMacDo;
+
+    h1 {
+        font-family: "speedee";
+        font-size: 15px;
+    }
 }
