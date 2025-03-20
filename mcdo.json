@@ -39,7 +39,15 @@
       "price": 4.50,
       "calories": 331,
       "image": "images/filet_o_fish.png"
-    }
+    },
+    {
+      "id": 6,
+      "name": "4 Chicken McNuggets™",
+      "description": "Quatre morceaux de poulet tendres et croustillants, accompagnés de votre sauce préférée.",
+      "price": 3.99,
+      "calories": 190,
+      "image": "images/chicken_mcnuggets.png"
+    }    
   ],
   "sides": [
     {
@@ -153,7 +161,7 @@
     {
       "id": 201,
       "name": "Happy Meal™ 4 Chicken McNuggets™",
-      "main": "4 Chicken McNuggets™",
+      "main": 6,
       "sideOptions": [10, 12],
       "drinkOptions": [21, 22],
       "toyOptions": ["Jouet Pokémon", "Livre Disney"],
