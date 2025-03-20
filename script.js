@@ -57,3 +57,52 @@ function afficherProduits(type, titre) {
         });
     }
 }
+
+// Générer toutes les modales de détail produit
+function generateProductModals() {
+    const existingModals = document.querySelectorAll('.product-modal');
+    existingModals.forEach(modal => modal.remove());
+
+    donnees.forEach(produit => {
+        let modal = document.createElement('div');
+        modal.id = `productModal-${produit.reference}`;
+        modal.className = 'modal product-modal';
+
+        modal.innerHTML = `
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Détail du produit</h2>
+                    <button class="secondary-btn close-btn" data-ref="${produit.reference}">
+                        <img src="assets/images/icons/back-arrow.png" alt="back icon">Retour
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col">	
+                            <img src="imagesProduits/${produit.photo}" alt="${produit.libelle}" class="img-produit">
+                        </div>	
+                        <div class="col">
+                            <div class="row">
+                                <p><strong>${produit.libelle}</strong></p>
+                                <img src="assets/images/icons/${produit.stock > 0 ? 'green-circle.png' : 'red-circle.png'}" alt="Stock icon">
+                            </div>
+                            <div class="row">
+                                <p><strong>Référence :</strong> ${produit.reference}</p>
+                                <p><strong>${produit.prix} €</strong></p>
+                            </div>
+                            <p>${produit.categorie}</p>
+                            <p>${produit.description}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        const closeBtn = modal.querySelector('.close-btn');
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        };
+    });
+}
