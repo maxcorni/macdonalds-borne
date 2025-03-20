@@ -1,6 +1,6 @@
 let donnees = [];
 const liste = document.getElementById('produitsList');
-const h1 = document.querySelector('h1');  // Récupérer le <h1>
+const h2 = document.querySelector('h2');  // Récupérer le <h2>
 const burgersButton = document.getElementById('burgersButton');
 const sidesButton = document.getElementById("sidesButton");
 const drinksButton = document.getElementById("drinksButton");
@@ -31,8 +31,8 @@ function afficherProduits(type, titre) {
     // Vider la liste des produits précédemment affichés
     liste.innerHTML = "";
 
-    // Mettre à jour le titre <h1>
-    h1.textContent = titre;
+    // Mettre à jour le titre <h2>
+    h2.textContent = titre;
 
     // Obtenir les produits à partir de l'objet 'donnees' en fonction du type
     const produits = donnees[type];
@@ -46,7 +46,7 @@ function afficherProduits(type, titre) {
                         <img src="../assets/${produit.image}" alt="${produit.name}">
                     </a>
                     <div class="produit-info">
-                        <h2>${produit.name}</h2>
+                        <h3>${produit.name}</h3>
                         <p>${produit.price} €</p>
                     </div>
                 </div>

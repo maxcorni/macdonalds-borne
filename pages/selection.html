@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>macdonals-borne</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mac Donalds</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <meta name="description" content="Mac Donalds, venez manger nos burgers et autres produits et venez comme vous êtes.">
     <link rel="stylesheet" href="../fonts/styles.css">
 	<link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 <header>
     <div class="container">
-        <nav>
-            <a href="../index.html" title="Page langue"> Annuler commande</a></li>
+        <div class="row">
+            <div class="col">
+                <div class="logo">
+                    <a href="../index.html" title="Home Page">
+                        <img src="../assets/images/logo.png" alt="Logo Mac Donalds">
+                    </a>
+                </div>
+                <h1>Venez comme vous êtes</h1>
+            </div>
             <div class="panier-button">
                 <button class="primary-btn" id="panierButton"><img src="../assets/images/icons/shopping-bag.png" alt="Plus icon">Voir panier</button>
             </div>
-        </nav>
+        </div>
     </div>
 </header>
+
+
 <main>
     <div class="row">
         <div class="filter">
@@ -43,7 +52,7 @@
             </div>
         </div>
         <div class="container liste-card-product" id="produitsContainer">
-            <h1>Choisir son repas</h1>
+            <h2>Choisir son repas</h2>
             <div class="flex" id="produitsList">
                 <!-- Les produits seront ajoutés ici par JS -->
             </div>
