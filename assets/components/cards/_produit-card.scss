@@ -1,6 +1,28 @@
 .produit-card{
+
+    height: 15rem;
+    width: 14rem;
+    background-color: #ffffff;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000000;
+    font-size: 12px;
+    justify-content: space-between;
+
+    .produit-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 10px;
+        width: 14rem;
+        border-top: 0.5px solid #0000003a;
+    }
+
     img{
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
+        margin-top: 1.5rem;
     }
 }

@@ -1,0 +1,20 @@
+@use "../../abstracts/index" as *;
+
+.panier-button {
+
+    .primary-btn {
+        height: 3.5rem;
+        width: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $ColorTexte;
+        font-size: 11px;
+        font-family: "speedee";
+        img {
+            width: 2rem;
+            height: 2rem;
+            margin-right: 0.5rem;
+        }
+    }
+}

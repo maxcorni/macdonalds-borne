@@ -32,54 +32,65 @@
 
 
 <main>
-    <div class="row">
-        <div class="filter">
-            <div class="burgers-button">
-                <button class="secondary-btn" id="burgersButton">Burgers</button>
-            </div>
-            <div class="sides-button">
-                <button class="secondary-btn" id="sidesButton">Accompagnements</button>
-            </div>
-            <div class="drinks-button">
-                <button class="secondary-btn" id="drinksButton">Boissons</button>
-            </div>
-            <div class="desserts-button">
-                <button class="secondary-btn" id="dessertsButton">Desserts</button>
-            </div>
-            <div class="menus-button">
-                <button class="secondary-btn" id="menusButton">Menus</button>
-            </div>
-            <div class="happymeal-button">
-                <button class="secondary-btn" id="happymealButton">Happymeal</button>
-            </div>
-        </div>
-        <div class="container liste-card-product" id="produitsContainer">
-            <h1>Choisir son repas</h1>
-            <h2></h2>
-            <div class="flex" id="produitsList">
-                <!-- Les produits seront ajoutés ici par JS -->
-            </div>
-        </div>
-    </div>
-    <div id="modalPanier" class="modal panier-modal">
-        <div class="modal-header">
-            <h2>Votre panier</h2>
-        </div>
-        <div class="modal-content">
+    <section class="container-produits">
 
-        </div>
-        <div class="modal-footer">
-            <div class="montant">
-                <h3>Total (TTC)</h3>
-                <p>0 €</p>
+        <div class="row">
+
+
+            <div class="filter">
+                <div class="burgers-button">
+                    <button class="secondary-btn" id="burgersButton">Burgers</button>
+                </div>
+                <div class="sides-button">
+                    <button class="secondary-btn" id="sidesButton">Accompagnements</button>
+                </div>
+                <div class="drinks-button">
+                    <button class="secondary-btn" id="drinksButton">Boissons</button>
+                </div>
+                <div class="desserts-button">
+                    <button class="secondary-btn" id="dessertsButton">Desserts</button>
+                </div>
+                <div class="menus-button">
+                    <button class="secondary-btn" id="menusButton">Menus</button>
+                </div>
+                <div class="happymeal-button">
+                    <button class="secondary-btn" id="happymealButton">Happymeal</button>
+                </div>
             </div>
-            <div class="btn-secondary">
-                <button class="cta-valider" id="idcheckPanier">Valider mon panier</button>
+
+
+            <div class="container liste-card-product" id="produitsContainer">
+                <h1>Choisir son repas</h1>
+                <div class="flex" id="produitsList">
+                    <!----- Les produits seront ajoutés ici par JS -->
+                </div>
             </div>
         </div>
-        </div>
-    </div> 
-    
+
+
+
+
+
+        <div id="modalPanier" class="modal panier-modal">
+            <div class="modal-header">
+                <h2>Votre panier</h2>
+            </div>
+            <div class="modal-content"></div>
+            <div class="modal-footer">
+                <div class="montant">
+                    <h3>Total (TTC)</h3>
+                    <p>0 €</p>
+                </div>
+                <div class="btn-secondary">
+                    <button class="cta-valider" id="idcheckPanier">Valider mon panier</button>
+                </div>
+            </div>
+        </div> 
+
+    </section>
+
+
+
 </main>
 <script src="../script.js"></script>
 </body>

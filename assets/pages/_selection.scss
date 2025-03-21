@@ -1,0 +1,31 @@
+@use "../abstracts/index" as *;
+
+body {
+    background-color: black;
+}
+
+.container-produits {
+    height: 100vh;
+
+    .filter {
+        flex: 1;
+        background-color: rgb(238, 69, 69);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        padding-top: 2rem;
+        gap: 5rem;
+    }
+
+    .liste-card-product {
+        flex: 3;
+        h1{
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            font-family: $font-primary;
+            font-size: 20px;
+        }
+    }
+}
