@@ -151,12 +151,12 @@ function generateOptionsForm(produit, data) {
     // Si le produit a des accompagnements à choisir (menus)
     if (produit.sideOptions) {
         html += '<p><strong>Choisissez un accompagnement :</strong></p>';
-        produit.sideOptions.forEach(id => {
+        produit.sideOptions.forEach((id, index) => {
             const option = findProductById(id, data);
             if (option) {
                 html += `
                     <label>
-                        <input type="radio" name="side-${produit.id}" value="${option.calories}" data-produitid="${produit.id}">
+                        <input type="radio" name="side-${produit.id}" value="${option.calories}" data-produitid="${produit.id}" ${index === 0 ? 'checked' : ''}>
                         ${option.name} (${option.calories} kcal)
                     </label>
                 `;
@@ -167,12 +167,12 @@ function generateOptionsForm(produit, data) {
     // Si le produit a des boissons à choisir
     if (produit.drinkOptions) {
         html += '<p><strong>Choisissez une boisson :</strong></p>';
-        produit.drinkOptions.forEach(id => {
+        produit.drinkOptions.forEach((id, index) => {
             const option = findProductById(id, data);
             if (option) {
                 html += `
                     <label>
-                        <input type="radio" name="drink-${produit.id}" value="${option.calories}" data-produitid="${produit.id}">
+                        <input type="radio" name="drink-${produit.id}" value="${option.calories}" data-produitid="${produit.id}" ${index === 0 ? 'checked' : ''}>
                         ${option.name} (${option.calories} kcal)
                     </label>
                 `;
@@ -183,10 +183,10 @@ function generateOptionsForm(produit, data) {
     // Si le produit a des jouets à choisir (Happy Meal)
     if (produit.toyOptions) {
         html += '<p><strong>Choisissez un jouet :</strong></p>';
-        produit.toyOptions.forEach(toy => {
+        produit.toyOptions.forEach((toy, index) => {
             html += `
                 <label>
-                    <input type="radio" name="toy-${produit.id}" value="0" data-produitid="${produit.id}">
+                    <input type="radio" name="toy-${produit.id}" value="0" data-produitid="${produit.id}" ${index === 0 ? 'checked' : ''}>
                     ${toy}
                 </label>
             `;
@@ -196,6 +196,7 @@ function generateOptionsForm(produit, data) {
     html += '</form>';
     return html;  // On retourne le formulaire HTML généré
 }
+
 
 // ------------------------------------ Cherche un produit dans toutes les catégories par son ID ------------------------------------ 
 function findProductById(id, data) {
