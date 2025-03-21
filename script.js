@@ -99,19 +99,15 @@ function generateProductModals(data) {
                     <h2>${produit.name}</h2>
                 </div>
                 <div class="modal-content">
-                    <div class="row">
-                        <div class="col">	
-                            <img src="../assets/${produit.image}" alt="${produit.name}" class="img-produit">
-                        </div>	
-                        <div class="col">
-                            <p><strong>Prix :</strong> ${produit.price.toFixed(2)} €</p>
-                            ${caloriesPrincipal !== 0 ? `<p><strong>Calories :</strong> ${caloriesPrincipal} kcal</p>` : ''}
-                            ${caloriesPrincipal !== 0 ? '' : `<p>${produit.description}</p>`}
-                            ${isMenu ? generateOptionsForm(produit, data) : ''}
-                            
-                            <p id="caloriesTotal-${produit.id}"><strong>Total Calories :</strong> ${caloriesPrincipal || 0} kcal</p>
-                            <button onclick="ajouterAuPanier(${produit.id})" class="primary-btn">Ajouter au panier</button>      
-                        </div>
+                    <div class="col">	
+                        <img src="../assets/${produit.image}" alt="${produit.name}" class="img-produit">
+                        <p><strong>Prix :</strong> ${produit.price.toFixed(2)} €</p>
+                        ${caloriesPrincipal !== 0 ? `<p><strong>Calories :</strong> ${caloriesPrincipal} kcal</p>` : ''}
+                        ${caloriesPrincipal !== 0 ? '' : `<p>${produit.description}</p>`}
+                        ${isMenu ? generateOptionsForm(produit, data) : ''}
+                        
+                        <p id="caloriesTotal-${produit.id}"><strong>Total Calories :</strong> ${caloriesPrincipal || 0} kcal</p>
+                        <button onclick="ajouterAuPanier(${produit.id})" class="primary-btn">Ajouter au panier</button>      
                     </div>
                 </div>
             </div>
