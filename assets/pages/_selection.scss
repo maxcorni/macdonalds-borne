@@ -6,6 +6,8 @@ body {
 
 .container-produits {
     height: 100vh;
+    display: flex;
+    flex-direction: row;
 
     .filter {
         flex: 1;
@@ -19,7 +21,7 @@ body {
     }
 
     .liste-card-product {
-        flex: 3;
+        flex: 6;
         h1{
             text-align: center;
             margin-top: 1rem;

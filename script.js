@@ -94,11 +94,11 @@ function generateProductModals(data) {
         }
 
         modal.innerHTML = `
-            <div class="modal-content">
+            <div class="modal-body">
                 <div class="modal-header">
                     <h2>${produit.name}</h2>
                 </div>
-                <div class="modal-body">
+                <div class="modal-content">
                     <div class="row">
                         <div class="col">	
                             <img src="../assets/${produit.image}" alt="${produit.name}" class="img-produit">
