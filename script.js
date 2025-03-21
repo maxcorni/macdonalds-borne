@@ -1,4 +1,5 @@
 let donnees = [];
+let panier = [];
 const liste = document.getElementById('produitsList');
 const h2 = document.querySelector('h2');  // Récupérer le <h2>
 const burgersButton = document.getElementById('burgersButton');
@@ -109,6 +110,7 @@ function generateProductModals(data) {
                             ${isMenu ? generateOptionsForm(produit, data) : ''}
                             
                             <p id="caloriesTotal-${produit.id}"><strong>Total Calories :</strong> ${caloriesPrincipal || 0} kcal</p>
+                            <button onclick="ajouterAuPanier(${produit.id})">Ajouter au panier</button>      
                         </div>
                     </div>
                 </div>
@@ -132,7 +134,7 @@ function generateOptionsForm(produit, data) {
                     <label>
                         <input type="radio" name="side-${produit.id}" value="${option.calories}" data-produitid="${produit.id}">
                         ${option.name} (${option.calories} kcal)
-                    </label><br>
+                    </label>
                 `;
             }
         });
@@ -147,7 +149,7 @@ function generateOptionsForm(produit, data) {
                     <label>
                         <input type="radio" name="drink-${produit.id}" value="${option.calories}" data-produitid="${produit.id}">
                         ${option.name} (${option.calories} kcal)
-                    </label><br>
+                    </label>
                 `;
             }
         });
@@ -160,7 +162,7 @@ function generateOptionsForm(produit, data) {
                 <label>
                     <input type="radio" name="toy-${produit.id}" value="0" data-produitid="${produit.id}">
                     ${toy}
-                </label><br>
+                </label>
             `;
         });
     }
@@ -263,9 +265,205 @@ window.onclick = function(event) {
     }
 }
 
-checkPanier.addEventListener("click", function(){
-    alert("Ta commande a bien été prise en charge !");
-    alert("N'oublie pas ton chevalet !");
-    modalPanier.style.display = "none";
-});
+
 //-------------------------------------------------//
+
+function ajouterAuPanier(produitId) {
+    const produit = findProductById(produitId, donnees);
+
+    if (!produit) {
+        console.error("Produit introuvable !");
+        return;
+    }
+
+    // Cherche si le produit est déjà dans le panier
+    const produitDansPanier = panier.find(item => item.id === produitId);
+
+    if (produitDansPanier) {
+        produitDansPanier.quantite += 1; // Si oui, augmente la quantité
+    } else {
+        panier.push({ ...produit, quantite: 1 }); // Sinon, ajoute-le avec quantité = 1
+    }
+
+    afficherPanier();
+}
+
+function afficherPanier() {
+    const modalContent = document.querySelector('#modalPanier .modal-content');
+    const montantTotal = document.querySelector('#modalPanier .montant p:last-child');
+
+    modalContent.innerHTML = `
+        <table class="panier-table">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Nom</th>
+                    <th>Quantité</th>
+                    <th>Prix</th>
+                    <th>Supprimer</th>
+                </tr>
+            </thead>
+            <tbody id="panier-body"></tbody>
+        </table>
+    `;
+
+    const tbody = document.getElementById('panier-body');
+    let totalPrix = 0;
+
+    panier.forEach((item) => {
+        const prixTotalProduit = item.price * item.quantite;
+        totalPrix += prixTotalProduit;
+    
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td><img src="../assets/${item.image}" alt="${item.name}" style="width: 50px;"></td>
+            <td>${item.name}</td>
+            <td>
+                <button onclick="changerQuantite(${item.id}, -1)">-</button>
+                ${item.quantite}
+                <button onclick="changerQuantite(${item.id}, 1)">+</button>
+            </td>
+            <td>${prixTotalProduit.toFixed(2)} €</td>
+            <td><button onclick="supprimerProduit(${item.id})">❌</button></td>
+        `;
+    
+        tbody.appendChild(row);
+    });
+
+    montantTotal.textContent = `${totalPrix.toFixed(2)} €`;
+}
+
+function changerQuantite(produitId, delta) {
+    const produit = panier.find(item => item.id === produitId);
+
+    if (!produit) return;
+
+    produit.quantite += delta;
+
+    if (produit.quantite <= 0) {
+        panier = panier.filter(item => item.id !== produitId);
+    }
+
+    afficherPanier();
+}
+
+function supprimerProduit(produitId) {
+    panier = panier.filter(item => item.id !== produitId);
+    afficherPanier();
+}
+
+function getTotalPrix() {
+    return panier.reduce((total, item) => total + item.price * item.quantite, 0);
+}
+
+checkPanier.addEventListener("click", function() {
+    const totalPrix = getTotalPrix();
+    if (totalPrix > 0) {
+        afficherPayement();
+    } else {
+        alert("Sélectionnez au moins 1 produit");
+    }
+});
+
+function afficherPayement(){
+    const modalContent = document.querySelector('#modalPanier .modal-content');
+    const modalFooter = document.querySelector('#modalPanier .modal-footer');
+    modalContent.innerHTML = "";
+    modalFooter.innerHTML = "";
+
+    modalContent.innerHTML = `
+        <div class="col">
+            <form id="form">			
+                <div class="col">
+                    <label for="table">Numéro de table</label>
+                    <input type="number" name="table" id="table">
+                </div>
+            </form>				
+            <button id="btnCarte">Carte</button>
+            <button id="btnComptoir">Comptoir</button>
+        </div>
+    `;
+
+    // Ajout des event listeners après l'injection HTML
+    const btnCarte = document.getElementById('btnCarte');
+    const btnComptoir = document.getElementById('btnComptoir');
+
+    btnCarte.addEventListener('click', () => {
+        envoyerRecap('Carte');
+    });
+
+    btnComptoir.addEventListener('click', () => {
+        envoyerRecap('Comptoir');
+    });
+}
+
+
+function envoyerRecap(moyenPaiement) {
+    const numeroTable = document.getElementById('table').value;
+    const totalPrix = getTotalPrix();
+
+    // Vérif si le champ est bien rempli
+    if (!numeroTable) {
+        alert('Veuillez entrer le numéro de table');
+        return;
+    }
+
+    // On envoie à la fonction recap (tu peux adapter à ton besoin)
+    recap({
+        table: numeroTable,
+        paiement: moyenPaiement,
+        panier: panier,
+        total: totalPrix
+    });
+}
+
+
+function recap({ table, paiement, panier, total }) {
+    const modalContent = document.querySelector('#modalPanier .modal-content');
+    const modalFooter = document.querySelector('#modalPanier .modal-footer');
+
+    modalContent.innerHTML = '';
+    modalFooter.innerHTML = '';
+
+    let ticketHTML = `
+        <h2>Ticket de caisse</h2>
+        <p><strong>Table :</strong> ${table}</p>
+        <p><strong>Moyen de paiement :</strong> ${paiement}</p>
+        <table class="panier-table">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                    <th>Prix</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    panier.forEach(item => {
+        ticketHTML += `
+            <tr>
+                <td>${item.name}</td>
+                <td>${item.quantite}</td>
+                <td>${(item.price * item.quantite).toFixed(2)} €</td>
+            </tr>
+        `;
+    });
+
+    ticketHTML += `
+            </tbody>
+        </table>
+        <p><strong>Total :</strong> ${total.toFixed(2)} €</p>
+        <button onclick="terminerCommande()">Terminer</button>
+    `;
+
+    modalContent.innerHTML = ticketHTML;
+}
+
+
+function terminerCommande() {
+    alert('Commande terminée ! Merci :)');
+    panier = [];
+    modalPanier.style.display = "none";
+    window.location.href = "../index.html";
+}
