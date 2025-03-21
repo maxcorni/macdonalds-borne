@@ -10,21 +10,16 @@
 	<link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-<header>
+<header class="selection-header">
     <div class="container">
         <div class="row">
-
-
             <div class="col">
                 <div class="logo">
                     <a href="../index.html" title="Home Page">
                         <img src="../assets/images/logo.png" alt="Logo Mac Donalds">
                     </a>
                 </div>
-                <h1>Venez comme vous êtes</h1>
             </div>
-
-
             <div class="panier-button">
                 <button class="primary-btn" id="panierButton">
                     <img src="../assets/images/icons/shopping-bag.png" alt="Plus icon">
@@ -59,29 +54,29 @@
             </div>
         </div>
         <div class="container liste-card-product" id="produitsContainer">
-            <h2>Choisir son repas</h2>
+            <h1>Choisir son repas</h1>
+            <h2></h2>
             <div class="flex" id="produitsList">
                 <!-- Les produits seront ajoutés ici par JS -->
             </div>
         </div>
     </div>
-    <div id="modalPanier" class="modal">
-        <div class="modal-contenu">
+    <div id="modalPanier" class="modal panier-modal">
+        <div class="modal-header">
             <h2>Votre panier</h2>
+        </div>
+        <div class="modal-content">
+
+        </div>
+        <div class="modal-footer">
             <div class="montant">
-                <p>Total (TTC)</p>
-                <!--- JS Montant Commande --->
-                <p>15,55 €</p>
-                <!--- JS Prix à ajouter div --->
+                <h3>Total (TTC)</h3>
+                <p>0 €</p>
             </div>
             <div class="btn-secondary">
-            <!--- JS CTA Valider --->
-            <div class="cta-valider" id="idcheckPanier">
-                <p>Valider mon panier</p>
+                <button class="cta-valider" id="idcheckPanier">Valider mon panier</button>
             </div>
-            </div>
-            <!--- JS Commande Panier--->
-            <div class="commande" id="idCommande"></div>
+        </div>
         </div>
     </div> 
     

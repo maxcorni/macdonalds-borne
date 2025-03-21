@@ -246,26 +246,26 @@ window.addEventListener('click', function (event) {
 
 
 //-------------------------------------------------//
-let btn = document.getElementById('btn-primary');
-let modal = document.querySelector('.modal');
-let checkPanier = document.getElementById('idcheckPanier');
+const panierButton = document.getElementById('panierButton');
+const checkPanier = document.getElementById('idcheckPanier');
+const modalPanier = document.getElementById('modalPanier');
+
 
 // ACTION AFFICHAGE MODAL (CSS)
-btn.addEventListener("click", function(){
-    modal.style.display = "block";
+panierButton.addEventListener("click", function(){
+    modalPanier.style.display = "block";
 });
 // CLOSE MODAL EN CLIQUANT A L'EXTERIEUR (CSS)
 
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == modalPanier) {
+        modalPanier.style.display = "none";
     }
 }
-//
-// Validation panier
+
 checkPanier.addEventListener("click", function(){
-    alert("Ta commande a bien été prise en charge !")
-    alert("N'oublie pas ton chevalet")
-    modal.style.display = "none";
+    alert("Ta commande a bien été prise en charge !");
+    alert("N'oublie pas ton chevalet !");
+    modalPanier.style.display = "none";
 });
 //-------------------------------------------------//
