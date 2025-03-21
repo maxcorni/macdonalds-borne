@@ -105,7 +105,6 @@ function generateProductModals(data) {
                         ${caloriesPrincipal !== 0 ? `<p><strong>Calories :</strong> ${caloriesPrincipal} kcal</p>` : ''}
                         ${caloriesPrincipal !== 0 ? '' : `<p>${produit.description}</p>`}
                         ${isMenu ? generateOptionsForm(produit, data) : ''}
-                        
                         <p id="caloriesTotal-${produit.id}"><strong>Total Calories :</strong> ${caloriesPrincipal || 0} kcal</p>
                         <button onclick="ajouterAuPanier(${produit.id})" class="primary-btn">Ajouter au panier</button>      
                     </div>
