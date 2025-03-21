@@ -33,6 +33,15 @@
         text-align: center;
     }
     
+    .col {
+        gap: 1rem;
+        align-items: center;
+    }
 }
 
-
+.product-modal {
+    img {
+        width: 10rem;
+        height: 10rem;
+    }
+}
