@@ -1,5 +1,17 @@
 .secondary-btn {
-    background-color: red;
+    background-color: #ffffff;
     font-size: 11px;
     padding: 0.6rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "speedee";
+    gap: 0.5rem;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+    border: none;
 }
+
+
