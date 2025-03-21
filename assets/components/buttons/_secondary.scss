@@ -1,5 +1,7 @@
+@use "../../abstracts/index" as *;
+
 .secondary-btn {
-    background-color: #ffffff;
+    background-color: $color-btn-secondary;
     font-size: 11px;
     padding: 0.6rem 0.8rem;
     display: flex;

@@ -1,6 +1,5 @@
 @use "../../abstracts/index" as *;
 
-
 /* Conteneur de la modale */
 .modal {
     display: none; /* Cachée par défaut */
@@ -11,9 +10,10 @@
     width: 500px;
     height: 100%;
     overflow: auto;
-    background-color: #000000b3; /* Fond sombre */
+    background-color: $cards-modal-background ; /* Fond sombre */
+
     .modal-content {
-        background-color: #fff;
+        background-color: $cards-modal-title;
         padding: 20px;
         position: relative;
     }
@@ -22,8 +22,8 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        background-color: $ColorHeaderMacDo;
-        color: #fff;
+        background-color: $color-header-MacDo ;
+        color: $cards-modal-title;
         padding: 1rem 2rem;
     }
 

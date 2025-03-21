@@ -4,12 +4,8 @@
     margin: 0 auto;
     width: 90%;
 }
-
-
-
-
 main {
-    background-color: antiquewhite;
+    background-color: $main;
 }
 .row{
     display: flex;
@@ -28,7 +24,6 @@ main {
         height: 60px;
     }
 }
-
 /*------------------------------------------*/
 .flex{
     display: flex;
@@ -42,7 +37,7 @@ main {
 body{
     width: 500px;
     margin: 0 auto;
-    border: 1px solid #000;
+    border: 1px solid $body;
     height: 100vh;
 }
 /*------------------------------------------*/
