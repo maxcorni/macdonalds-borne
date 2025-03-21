@@ -5,7 +5,9 @@ body {
 }
 
 .container-produits {
-    height: 100vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
 
     .filter {
         flex: 1;
@@ -15,13 +17,18 @@ body {
         flex-direction: column;
         align-items: left;
         padding-top: 2rem;
-        gap: 5rem;
+        gap: 1rem;
+        border-right: solid 0.5px black;
     }
 
+    img{
+        width: 6rem;
+        height: 6rem;
+    }
+    
     .liste-card-product {
         flex: 3;
         h1{
-            text-align: center;
             margin-top: 1rem;
             margin-bottom: 2rem;
             font-family: $font-primary;

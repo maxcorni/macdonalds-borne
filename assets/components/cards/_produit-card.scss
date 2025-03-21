@@ -1,7 +1,7 @@
 .produit-card{
 
     height: 15rem;
-    width: 14rem;
+    width: calc(50% - 1rem);
     background-color: #ffffff;
     margin-bottom: 1rem;
     display: flex;
@@ -9,11 +9,12 @@
     align-items: center;
     color: #000000;
     font-size: 12px;
-    justify-content: space-between;
+    
 
     .produit-info {
         display: flex;
         flex-direction: column;
+        text-align: center;
         align-items: center;
         font-size: 10px;
         width: 14rem;

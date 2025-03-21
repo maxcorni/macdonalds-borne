@@ -4,6 +4,7 @@
 .choix-langues {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 
     .title-langues {
         display: flex;
@@ -13,13 +14,9 @@
         h2 {
             font-size: 20px;
             font-family: "speedee";
+            margin: 2rem 0;
         }
     }
-    img {
-        width: 150px;
-        height: 80px;
-    }
-
     .item {
         margin-bottom: 1rem;
         font-family: "speedee";
@@ -30,7 +27,15 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: $ColorHeaderMacDo;
         color: $ColorTexte;
+        border: solid 0.5px #0000005e;
+        border-radius: 2%;
+        height: 12rem;
+        font-size: 14px;
+    }
+    img {
+        width: 150px;
+        height: 80px;
+        margin-bottom: 1rem;
     }
 }
