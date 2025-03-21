@@ -13,6 +13,8 @@
 <header>
     <div class="container">
         <div class="row">
+
+
             <div class="col">
                 <div class="logo">
                     <a href="../index.html" title="Home Page">
@@ -21,8 +23,13 @@
                 </div>
                 <h1>Venez comme vous êtes</h1>
             </div>
+
+
             <div class="panier-button">
-                <button class="primary-btn" id="panierButton"><img src="../assets/images/icons/shopping-bag.png" alt="Plus icon">Voir panier</button>
+                <button class="primary-btn" id="panierButton">
+                    <img src="../assets/images/icons/shopping-bag.png" alt="Plus icon">
+                    Voir panier
+                </button>
             </div>
         </div>
     </div>
@@ -58,6 +65,25 @@
             </div>
         </div>
     </div>
+    <div id="modalPanier" class="modal">
+        <div class="modal-contenu">
+            <h2>Votre panier</h2>
+            <div class="montant">
+                <p>Total (TTC)</p>
+                <!--- JS Montant Commande --->
+                <p>15,55 €</p>
+                <!--- JS Prix à ajouter div --->
+            </div>
+            <div class="btn-secondary">
+            <!--- JS CTA Valider --->
+            <div class="cta-valider" id="idcheckPanier">
+                <p>Valider mon panier</p>
+            </div>
+            </div>
+            <!--- JS Commande Panier--->
+            <div class="commande" id="idCommande"></div>
+        </div>
+    </div> 
     
 </main>
 <script src="../script.js"></script>

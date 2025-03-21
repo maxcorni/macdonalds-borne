@@ -243,3 +243,29 @@ window.addEventListener('click', function (event) {
         }
     });
 });
+
+
+//-------------------------------------------------//
+let btn = document.getElementById('btn-primary');
+let modal = document.querySelector('.modal');
+let checkPanier = document.getElementById('idcheckPanier');
+
+// ACTION AFFICHAGE MODAL (CSS)
+btn.addEventListener("click", function(){
+    modal.style.display = "block";
+});
+// CLOSE MODAL EN CLIQUANT A L'EXTERIEUR (CSS)
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+//
+// Validation panier
+checkPanier.addEventListener("click", function(){
+    alert("Ta commande a bien été prise en charge !")
+    alert("N'oublie pas ton chevalet")
+    modal.style.display = "none";
+});
+//-------------------------------------------------//
