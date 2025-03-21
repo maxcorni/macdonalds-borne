@@ -375,8 +375,8 @@ function afficherPayement(){
                     <input type="number" name="table" id="table">
                 </div>
             </form>				
-            <button id="btnCarte">Carte</button>
-            <button id="btnComptoir">Comptoir</button>
+            <button id="btnCarte" class="primary-btn">Carte</button>
+            <button id="btnComptoir" class="primary-btn">Comptoir</button>
         </div>
     `;
 
@@ -450,7 +450,7 @@ function recap({ table, paiement, panier, total }) {
             </tbody>
         </table>
         <p><strong>Total :</strong> ${total.toFixed(2)} €</p>
-        <button onclick="terminerCommande()">Terminer</button>
+        <button onclick="terminerCommande()" class="primary-btn">Terminer</button>
     `;
 
     modalContent.innerHTML = ticketHTML;

@@ -33,16 +33,16 @@ main {
 .flex{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-around;
     gap: 1rem;
     flex-wrap: wrap;
     padding: 0 0.5rem;
-    height: 100vh;
 }
 
 body{
     width: 500px;
     margin: 0 auto;
     border: 1px solid #000;
+    height: 100vh;
 }
 /*------------------------------------------*/
