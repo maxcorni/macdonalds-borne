@@ -11,22 +11,18 @@ body {
 
     .filter {
         flex: 1;
-        background-color: rgb(238, 69, 69);
         height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: left;
         padding-top: 2rem;
         gap: 1rem;
-        border-right: solid 0.5px black;
+        border-right: solid 0.5px #0000004b;
         img{
             width: 6rem;
             height: 6rem;
         }
     }
-
-
-    
     .liste-card-product {
         flex: 6;
         h1{
