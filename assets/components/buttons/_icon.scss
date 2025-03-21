@@ -1,0 +1,26 @@
+@use "../../abstracts/index" as *;
+
+.icon-btn {
+    height: 2rem;
+    width: 2rem;
+    background-color: #ffbc0d;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer; // Ajoute le curseur main pour l'interaction
+    transition: all 0.2s ease; // Animation douce pour les états hover/active
+  
+    img {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.5rem;
+    }
+  
+    &:hover {
+      transform: translateY(-2px); // Petit effet de survol
+    }
+  
+    &:active {
+      transform: scale(0.95); // Légère réduction visuelle
+    }
+  }
+  
