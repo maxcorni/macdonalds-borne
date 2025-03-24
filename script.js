@@ -353,7 +353,7 @@ function afficherPanier() {
     let totalPrix = 0; // Initialise le prix total du panier
 
     panier.forEach((item) => {
-        const prixTotalProduit = item.price * item.quantite; // Prix total du produit (prix * quantité)
+        const prixTotalProduit = item.price * item.quantite; // Prix total du produit (prix *quantité)
         totalPrix += prixTotalProduit; // Ajoute au total général
 
         // Crée une ligne dans le tableau pour chaque produit
