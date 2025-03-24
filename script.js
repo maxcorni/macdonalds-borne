@@ -81,6 +81,8 @@ function generateProductModals(data) {
     existingModals.forEach(modal => modal.remove());
 
     // Regroupe tous les produits de toutes les catégories en un seul tableau
+
+    // Fusion des tableaux dans une variable
     const categories = [
         ...data.burgers,
         ...data.sides,
@@ -376,6 +378,7 @@ function afficherPanier() {
 
 // Change la quantité d'un produit dans le panier (ajouter ou retirer)
 function changerQuantite(produitId, delta) {
+    
     const produit = panier.find(item => item.id === produitId); // Trouve le produit
 
     if (!produit) return; // Si le produit n'existe pas, on arrête
@@ -447,6 +450,7 @@ function afficherPayement() {
 
 // Fonction appelée après choix du mode de paiement
 function envoyerRecap(moyenPaiement) {
+
     const numeroTable = document.getElementById('table').value; // Récupère le numéro de table
     const totalPrix = getTotalPrix(); // Récupère le total du panier
 

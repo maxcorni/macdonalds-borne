@@ -98,7 +98,11 @@ Le projet a été réalisé à deux dans le cadre de notre formation **Webecom 2
    ```bash
    git clone https://github.com/[ton-repo]/mcdo-borne.git
    ```
-2. **Ouvrir `index.html` dans un navigateur** :
+2. **Compiler le main.scss en styles.css** :
+   ```bash
+   sass assets/main.scss:css/styles.css
+   ```
+3. **Ouvrir `index.html` dans un navigateur** :
    - Double-clique sur le fichier `index.html`
    - Ou ouvre-le avec un éditeur de code et lance une **Live Preview**.
 
