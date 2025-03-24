@@ -15,7 +15,7 @@ Le projet a été réalisé à deux dans le cadre de notre formation **Webecom 2
 
 ## 🛠️ Technologies utilisées
 - **HTML5** : Structure des pages
-- **CSS3** : Mise en forme et design de l’interface
+- **SCSS** : Mise en forme et design de l’interface
 - **JavaScript** : Dynamique de l’interface (calcul des calories, gestion des sélections, interactions)
 ---
 
