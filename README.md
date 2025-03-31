@@ -102,7 +102,7 @@ Le projet a été réalisé à deux dans le cadre de notre formation **Webecom 2
 ## 🚀 Lancer le projet
 1. **Télécharger ou cloner le projet** :
    ```bash
-   git clone https://github.com/[ton-repo]/mcdo-borne.git
+   git clone https://github.com/maxcorni/mcdo-borne.git
    ```
 2. **Compiler le main.scss en styles.css** :
    ```bash
