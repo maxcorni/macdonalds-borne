@@ -8,7 +8,7 @@ Le projet a été réalisé à deux dans le cadre de notre formation **Webecom 2
 ---
 
 ## 🚀 **Démo en ligne**
-👉 [https://maxcorni.github.io/gsap-test/](https://maxcorni.github.io/macdonalds-borne/)
+👉 [https://maxcorni.github.io/macdonalds-borne/](https://maxcorni.github.io/macdonalds-borne/)
 
 ---
 
