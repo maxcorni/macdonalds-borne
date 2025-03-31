@@ -7,6 +7,11 @@ Le projet a été réalisé à deux dans le cadre de notre formation **Webecom 2
 
 ---
 
+## 🚀 **Démo en ligne**
+👉 [https://maxcorni.github.io/gsap-test/]
+
+---
+
 ## 👥 Équipe projet
 - **Maxime Cornillon**
 - **Sebastien Chatel**
@@ -15,8 +20,9 @@ Le projet a été réalisé à deux dans le cadre de notre formation **Webecom 2
 
 ## 🛠️ Technologies utilisées
 - **HTML5** : Structure des pages
-- **SCSS** : Mise en forme et design de l’interface
+- **SCSS** : Mise en forme et design de l’interface 1.85.0 compilé avec dart2js 3.7.0.
 - **JavaScript** : Dynamique de l’interface (calcul des calories, gestion des sélections, interactions)
+- **Node.js** : Pour la gestion des dépendances version 11.1.0.
 ---
 
 ## 🎯 Objectifs
